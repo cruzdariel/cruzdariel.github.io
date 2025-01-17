@@ -64,7 +64,6 @@ header p span.dariel {
     gap: 20px;
 }
 
-
 .left-menu a, .right-menu a {
     text-decoration: none;
     color: white;
@@ -95,4 +94,40 @@ header p span.dariel {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .container, .container-page {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .left-menu, .right-menu, .left-menu-page, .right-menu-page {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .left-menu a, .right-menu a, .left-menu-page a, .right-menu-page a {
+        font-size: 20px;
+    }
+
+    .profile-section img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header p {
+        font-size: 24px;
+    }
+
+    .left-menu a, .right-menu a, .left-menu-page a, .right-menu-page a {
+        font-size: 18px;
+    }
+
+    .profile-section img {
+        width: 100%;
+    }
 }
