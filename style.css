@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'JetBrains Mono';
     background-color: #050a30;
     color: white;
     display: flex;
@@ -100,7 +100,7 @@ header p span.dariel {
 @media (max-width: 768px) {
     .container, .container-page {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         gap: 20px;
     }
 
@@ -117,8 +117,11 @@ header p span.dariel {
         width: 90%;
     }
 }
-
 @media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
     header p {
         font-size: 24px;
     }
@@ -129,5 +132,15 @@ header p span.dariel {
 
     .profile-section img {
         width: 100%;
+    }
+}
+
+@media print {
+    body {
+        color: black;
+    }
+
+    .left-menu a, .right-menu a, .left-menu-page a, .right-menu-page a {
+        color: black;
     }
 }
