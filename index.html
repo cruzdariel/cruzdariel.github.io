@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dariel's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dynamicText = document.querySelector(".dariel strong");
+            const phrases = [
+                "dariel",
+                "an aviation geek",
+                "a python prince",
+                "using my transit card",
+                "a drone pilot",
+                "a future data scientist",
+                "ready for your next project"
+            ];
+
+            let index = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let currentPhrase = phrases[index];
+
+            function typeEffect() {
+                if (isDeleting) {
+                    dynamicText.textContent = currentPhrase.substring(0, charIndex--);
+                    if (charIndex < 0) {
+                        isDeleting = false;
+                        index = (index + 1) % phrases.length;
+                        currentPhrase = phrases[index];
+                        setTimeout(typeEffect, 500); // Pause before typing next phrase
+                    } else {
+                        setTimeout(typeEffect, 100); // Speed of deleting
+                    }
+                } else {
+                    dynamicText.textContent = currentPhrase.substring(0, charIndex++);
+                    if (charIndex > currentPhrase.length) {
+                        isDeleting = true;
+                        setTimeout(typeEffect, 2000); // Pause before deleting
+                    } else {
+                        setTimeout(typeEffect, 100); // Speed of typing
+                    }
+                }
+            }
+
+            typeEffect();
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <p><span class="print">print</span>("hello, i’m <span class="dariel"><strong>dariel</strong></span>")</p>
+    </header>
+
+    <div class="container">
+        <div class="left-menu">
+            <a href="#about">about me</a>
+            <a href="#cv">CV</a>
+            <a href="/projects.html">projects</a>
+            <a href="#drones">drones</a>
+        </div>
+
+        <div class="profile-section">
+            <img src="images/dariel.png" alt="Dariel's design">
+        </div>
+
+        <div class="right-menu">
+            <a href="#linkedin">linkedin</a>
+            <a href="#github">github</a>
+            <a href="#email">email</a>
+        </div>
+    </div>
+
+</body>
+</html>
