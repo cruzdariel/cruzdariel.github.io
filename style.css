@@ -55,6 +55,7 @@ header p span.dariel {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    margin-bottom: 10px;
 }
 
 .left-menu-page, .right-menu-page {
