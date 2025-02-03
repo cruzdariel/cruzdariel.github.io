@@ -108,6 +108,7 @@ header p span.dariel {
     box-sizing: border-box;
     border: 3px solid #1a526b;
     box-shadow: 5px 5px 5px 5px #000000;
+    background-color: #062a3b;
     border-radius: 15px;
     position: relative;
     width: 100%;
@@ -115,15 +116,17 @@ header p span.dariel {
 
 }
 
-@media (max-width: 768px) {
-    .projects-container {
+@media (max-width: 1024px) {
+    .project-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .projects-container {
+    .project-content {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
