@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: 
+Disallow: /cv.html/
+Disallow: /projects.html/
+Disallow: /about.html/
+Disallow: /images/
+Sitemap: https://www.dariel.us/sitemap.xml/
