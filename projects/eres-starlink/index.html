@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>ERES Starlink Indicator</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon/favicon.ico">
+    <style>
+        .demo-video {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #1a526b;
+            margin: 10px 0;
+        }
+        .content a { color: #69b3e7; }
+        .content li { margin-bottom: 8px; }
+        code {
+            background-color: #062a3b;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .legend-star, .legend-dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            vertical-align: -2px;
+            margin-right: 6px;
+        }
+        .legend-star {
+            background: #69b3e7;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .legend-dot { border-radius: 50%; width: 10px; height: 10px; margin: 0 8px 0 2px; }
+        .legend-dot.no { background: #b0b0b0; }
+        .legend-dot.unknown { border: 2px solid #b0b0b0; box-sizing: border-box; }
+        .disclaimer {
+            border: 2px solid #F4D03F;
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-menu-page">
+        <p> </p>
+        <a href="../../index.html" class="back-button">&larr; Home</a>
+    </div>
+
+    <div class="container-page">
+
+        <div class="content">
+            <h1>ERES Starlink Indicator</h1>
+            <h4>A Chrome extension for United employee travel</h4>
+            <hr>
+
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This is an independent, personal project. It is not affiliated with,
+                endorsed by, or supported by United Airlines, Inc. or Starlink/SpaceX. Use at your own discretion.
+            </p>
+
+            <p>
+                When you're non-revving, a good flight is one with open seats and, ideally, good Wi-Fi. United is
+                rolling Starlink out across its fleet, but Employee Reservations (ERES) doesn't tell you which
+                flights have it. This extension does: it adds a small marker next to every United flight number
+                on ERES search results and in your travel plans.
+            </p>
+
+            <video class="demo-video" src="demo.mp4" controls muted playsinline preload="metadata"></video>
+
+            <h3>What the markers mean</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><span class="legend-star"></span> Starlink Wi-Fi on the scheduled aircraft</li>
+                <li><span class="legend-dot no"></span> No Starlink</li>
+                <li><span class="legend-dot unknown"></span> Unknown (aircraft not assigned yet, or non-United carrier)</li>
+            </ul>
+            <p>
+                Hover over a marker to see the details, like the aircraft type and tail number, or the odds
+                that the flight gets a Starlink-equipped plane if one hasn't been assigned yet.
+            </p>
+
+            <h3>How it works</h3>
+            <p>
+                The extension reads the flight number, date and route from the ERES page and looks each one up
+                against <a href="https://unitedstarlinktracker.com" target="_blank">United Starlink Tracker</a>.
+                Results are cached for the browser session so it isn't re-checking the same flight constantly.
+                It only runs on <code>united.com/EmployeeRes</code> pages, doesn't touch your login or bookings,
+                and doesn't collect or send any of your personal data anywhere.
+            </p>
+
+            <h3>Install it</h3>
+            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                <a href="eres-starlink-extension.zip" download style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Download Extension (.zip)</a>
+            </div>
+            <p>
+                It isn't on the Chrome Web Store, so you'll load it manually. It takes about a minute:
+            </p>
+            <ol>
+                <li>Download the zip above and unzip it. You should end up with a folder called <code>eres-starlink-extension</code>.</li>
+                <li>Open Chrome and go to <code>chrome://extensions</code>.</li>
+                <li>Turn on <strong>Developer mode</strong> using the toggle in the top-right corner.</li>
+                <li>Click <strong>Load unpacked</strong> and select the <code>eres-starlink-extension</code> folder (the one containing <code>manifest.json</code>).</li>
+                <li>Open (or refresh) Employee Reservations and search for flights. Markers will appear next to the flight numbers.</li>
+            </ol>
+            <p>
+                Keep the unzipped folder somewhere permanent; if you delete or move it, Chrome will remove the extension.
+                This also works in other Chromium browsers like Edge, Brave and Arc.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
