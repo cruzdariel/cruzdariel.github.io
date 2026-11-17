@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Biggie</title>
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #050a30;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 24px 16px 40px;
+        }
+
+        main {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header p {
+            font-size: 26px;
+            margin: 0 0 8px;
+        }
+
+        .print { color: #F4D03F; }
+
+        .subtitle {
+            color: #b8c0e0;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .photo {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: 35% 50%;
+            border-radius: 15px;
+            border: 3px solid #1a526b;
+            margin-bottom: 20px;
+        }
+
+        .call-button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #F4D03F;
+            color: #050a30;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 18px 16px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 0 #b8971f;
+        }
+
+        .call-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #b8971f;
+        }
+
+        .call-number {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+
+        .card {
+            border: 3px solid #1a526b;
+            background-color: #062a3b;
+            border-radius: 15px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            color: #F4D03F;
+            margin: 0 0 12px;
+            text-transform: lowercase;
+        }
+
+        dl {
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            font-size: 14px;
+        }
+
+        dt { color: #b8c0e0; }
+
+        dd {
+            margin: 0;
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .vaccine + .vaccine {
+            border-top: 1px solid #1a526b;
+            margin-top: 14px;
+            padding-top: 14px;
+        }
+
+        .vaccine h3 {
+            font-size: 15px;
+            margin: 0 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <p><span class="print">print</span>("hi, i'm <strong>Biggie</strong>")</p>
+            <p class="subtitle">If you're reading this, I might be lost.</p>
+        </header>
+
+        <img class="photo" src="https://i.ibb.co/jkSn0ddj/biggie.jpg" alt="Biggie, an orange tabby cat">
+
+        <a class="call-button" href="tel:+13213308000">Found me? Call my owner.<span class="call-number">(321) 330-8000</span></a>
+
+        <section class="card">
+            <h2>about me</h2>
+            <dl>
+                <dt>Name</dt><dd>Biggie</dd>
+                <dt>Born</dt><dd>January 1, 2026</dd>
+                <dt>Breed</dt><dd>Domestic Medium Hair</dd>
+                <dt>Color</dt><dd>Orange Tabby</dd>
+                <dt>Size</dt><dd>Large</dd>
+            </dl>
+        </section>
+
+        <section class="card">
+            <h2>vaccinations</h2>
+
+            <div class="vaccine">
+                <h3>Rabies</h3>
+                <dl>
+                    <dt>Tag #</dt><dd>61202616</dd>
+                    <dt>Expires</dt><dd>10/18/2027</dd>
+                </dl>
+            </div>
+
+            <div class="vaccine">
+                <h3>FVRCP</h3>
+                <dl>
+                    <dt>Dose given</dt><dd>10/13/2026</dd>
+                </dl>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
